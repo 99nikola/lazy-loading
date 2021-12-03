@@ -49,6 +49,8 @@ const ImageList: React.FC<ImageListProps> = (props) => {
                 url={image.url}
                 alt={image.alt}
                 observer={imageObserver}
+                width={image.width}
+                height={image.height}
             />
         ))}
     </>

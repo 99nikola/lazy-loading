@@ -23,7 +23,9 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
                 setIimageURLs(photos.map((photo: any) => ({
                     url: photo.urls.regular,
                     id: photo.id,
-                    alt: photo.user.name
+                    alt: photo.user.name,
+                    width: photo.width,
+                    height: photo.height
                 })));
                 setLoaded(true);
             });

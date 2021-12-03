@@ -20,7 +20,7 @@ const App: React.FC = () => {
 		{render}
 
 		<div className="menu-button-container">
-			<label htmlFor="sidebar" onClick={handleLoad}>
+			<label htmlFor="sidebar" onMouseEnter={handleLoad}>
 				<MenuIcon
 					id="menu-icon"
 					/>

@@ -1,9 +1,11 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 
 interface LazyImageProps {
-    observer: IntersectionObserver
-    url: string
-    alt: string
+    observer: IntersectionObserver,
+    url: string,
+    alt: string,
+    width: number,
+    height: number
 }
 
 const LazyImage: React.FC<LazyImageProps> = (props) => {
@@ -23,13 +25,22 @@ const LazyImage: React.FC<LazyImageProps> = (props) => {
         return () => props.observer.unobserve(imageElem);
     }, [props.observer]);
 
+    const containerStyle = useMemo(() => ({
+        width: props.width / 10,
+        height: props.height / 10
+    }), [props.width, props.height]);
+
     return (
-        <img
-            className="image"
-            ref={imageRef}
-            data-src={props.url}
-            alt={props.alt}
-        />
+        <div style={containerStyle}>
+            <img
+                className="image"
+                ref={imageRef}
+                data-src={props.url}
+                alt={props.alt}
+                width="100%"
+                height="100%"
+            />
+        </div>
     )
 }
 
