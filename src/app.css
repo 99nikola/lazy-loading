@@ -1,0 +1,58 @@
+.sidebar {
+    height: 100%;
+    border-right: 1px solid rgb(97, 97, 97);
+    background-color: rgb(241, 238, 233);
+    position: fixed;
+    top: 0%;
+    right: 100%;
+    padding: 20px;
+    max-width: 500px;
+    overflow-y: auto;
+
+    transition-property: transform;
+    transition-duration: 300ms;
+}
+
+#sidebar {
+    display: none;
+}
+
+#sidebar:checked + .sidebar {
+    transform: translateX(100%);
+}
+
+.menu-button-container {
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px;
+}
+
+
+#menu-icon {
+    font-size: 35px;
+    box-shadow: 0 0 2px 1px rgb(44, 44, 44);
+    border-radius: 4px;
+    color: whitesmoke;
+    padding: 5px;
+    background-color: rgb(94, 110, 112);
+
+    transition-property: transform;
+    transition-duration: 300ms;
+}
+
+#menu-icon:hover {
+    cursor: pointer;
+}
+#menu-icon:active {
+    background-color: rgb(115, 134, 136);;
+}
+
+#sidebar:checked ~ .menu-button-container #menu-icon {
+    transform: rotate(90deg);
+}
+
+.image {
+    max-width: 300px;
+    border: 1px solid black
+}
